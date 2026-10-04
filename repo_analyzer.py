@@ -178,7 +178,7 @@ class GitHubRepoAnalyzer:
 
         for i in range(0, total, BATCH_SIZE):
 
-            batch = chunked_docs[i:i + BATCH_SIZE]
+            batch = chunked_docs[i:i + BATCH_SIZE]     #Pass 20 tokens at a time and then take 20 sec break to avoid API hit limit
 
             print(
                 f"Embedding batch {i // BATCH_SIZE + 1} "
